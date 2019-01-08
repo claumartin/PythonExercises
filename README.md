@@ -14,4 +14,4 @@ Python exercises of the first course module of  Programming, from the Web Applic
 - Learning Python, 5th Edition.
 - Agile Principles, Patterns, and Practices in C#.
 - Code Complete, Second Edition.
-- The very best teacher David Gelpi.
+- David Gelpi.
