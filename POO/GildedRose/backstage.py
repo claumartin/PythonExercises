@@ -3,14 +3,15 @@ from regularItem import RegularItem
 class Backstage(RegularItem):
 
     def updateQuality(self):
-        if self.getSellIn() > 10:
-            self.quality += 1
+        
+        if self.getSellIn() <= 5:
+            self.quality += 3
 
         elif self.getSellIn() <= 10:
             self.quality += 2
 
-        elif self.getSellIn() <= 5:
-            self.quality += 3
+        elif self.getSellIn() > 10:
+            self.quality += 1
         
         else:
             self.quality = 0
