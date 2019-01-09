@@ -1,3 +1,4 @@
+
 class Updateable():
 
     def update_quality(self):
