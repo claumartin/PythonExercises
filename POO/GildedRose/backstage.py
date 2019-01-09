@@ -2,7 +2,6 @@ from regularItem import RegularItem
 
 class Backstage(RegularItem):
 
-
     def updateQuality(self):
         if self.getSellIn() > 10:
             self.quality += 1
@@ -15,6 +14,7 @@ class Backstage(RegularItem):
         
         else:
             self.quality = 0
+
 
 if __name__ == '__main__':
 
