@@ -15,7 +15,3 @@ class Item:
 if __name__ == '__main__':
 
     pato = Item('pato', 20, 4)
-
-    assert pato.getName() == 'pato'
-    assert pato.getSellIn() == 20
-    assert pato.getQuality() == 4
