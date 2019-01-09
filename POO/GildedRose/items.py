@@ -1,11 +1,9 @@
-from updateable import Updateable
-
-class Item(Updateable):
+class Item:
 
 
-    def __init__(self, name, sell_in, quality):
+    def __init__(self, name, sellIn, quality):
         self.name = name
-        self.sell_in = sell_in
+        self.sellIn = sellIn
         self.quality = quality
 
 
@@ -14,7 +12,7 @@ class Item(Updateable):
 
 
     def getSellIn(self):
-        return self.sell_in
+        return self.sellIn
 
 
     def getQuality(self):
@@ -28,8 +26,8 @@ class Item(Updateable):
 
 if __name__ == '__main__':
 
-    pato = Item('pato', '20', '4')
+    pato = Item('pato', 20, 4)
 
     assert pato.getName() == 'pato'
-    assert pato.getSellIn() == '20'
-    assert pato.getQuality() == '4'
+    assert pato.getSellIn() == 20
+    assert pato.getQuality() == 4
