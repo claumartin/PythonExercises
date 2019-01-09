@@ -28,7 +28,7 @@ class RegularItem(Item, Updateable):
             self.quality = 0
 
         else:
-            self.quality = updateQuality(self)
+            self.quality = updateQuality()
 
         assert 0 <= self.quality <= 50, '%s quality de out of range' % self.__class__.__name__
 
@@ -44,5 +44,5 @@ if __name__ == '__main__':
     pato.setSellIn()
     assert pato.getSellIn() == 19
 
-    pato.updateQuality()
+    pato.updateQuality() 
     assert pato.getQuality() == 3
