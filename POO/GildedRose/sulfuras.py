@@ -1,12 +1,16 @@
 from regularItem import RegularItem
 
+
 class Sulfuras(RegularItem):
 
     def setSellIn(self):
         pass
 
+
     def updateQuality(self):
         pass
+
+
 
 
 if __name__ == '__main__':
