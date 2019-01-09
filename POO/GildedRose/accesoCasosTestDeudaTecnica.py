@@ -1,4 +1,6 @@
 def accesoCasosTestTxt(matrizCasosTest, rutaAccesoFichero):
+
+
     # '''
     # Devuelve el conjunto de casos test en una matriz donde cada
     # entrada es una matriz con todos los items modificados ese dia:
@@ -19,57 +21,77 @@ def accesoCasosTestTxt(matrizCasosTest, rutaAccesoFichero):
     #          ... ]
     #        ]
     # '''
+
     try:
         if not isinstance(rutaAccesoFichero, str):
             raise ValueError
         fichero = open(rutaAccesoFichero, 'r')
+
     except FileNotFoundError:
         print('Fichero no encontrado')
         return []
+
     except ValueError:
         print('El nombre del fichero ha de ser un string')
         return []
+
     else:
         matrizCasosTest = []
+
         for linea in fichero:
             if linea.find('day') != -1:
                 casosTestDia = []
+
             elif linea == '\n':
                 matrizCasosTest.append(casosTestDia)
+
             elif linea.find('name') != -1:
                 numeroPropiedadesItem = len(linea.split(','))
+
             else:
                 item = linea.rstrip().rsplit(',', maxsplit=numeroPropiedadesItem-1)
                 casosTestDia.append(item)
+
         fichero.close()
+
         return matrizCasosTest
 
 
 def crearFicheroCasosTest(ficheroVolcadoCasosTest, matrizCasosTest):
+
     # """
     # Vuelca los casos test cargados en memoria
     # a un fichero stdout.txt para inspeccionarlos.
     # """
+
     try:
         if not isinstance(ficheroVolcadoCasosTest, str):
             raise ValueError
         stdout = open(ficheroVolcadoCasosTest, 'w')
+
     except ValueError:
             print('La ruta de acceso al fichero ha de ser un string')
+
     else:
+
         for (offset, casosTestDia) in enumerate(matrizCasosTest):
             stdout.write('-' * 5 + ' Dia %d: ' % offset + '-' * 5 + '\n')
+
             for item in casosTestDia:
                 stdout.write(','.join(item) + '\n')
+
         stdout.close()
 
 
 def mostrarCasosTest(matrizCasosTest):
+
     # """
     # Muestra en consola los casos test cargados en memoria
     # """
+    
     for (offset, casosTestDia) in enumerate(matrizCasosTest):
         print('-' * 5 + " Dia %d: " % offset + '-' * 5)
+        
         for item in casosTestDia:
             print(item)
 
