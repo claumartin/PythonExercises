@@ -2,13 +2,13 @@ from sulfuras import Sulfuras
 from agedBrie import AgedBrie
 from backstage import Backstage
 
+
 class GildedRose():
 
     def __init__(self, stock):
         self.stock = stock
 
     
-
     def getStock(self):
         return self.stock
     
@@ -16,6 +16,9 @@ class GildedRose():
     def updateStock(self):
         for item in self.stock:
             item.updateQuality()
+
+
+
 
 if __name__ == "__main__":
     
