@@ -3,6 +3,7 @@ from updateable import Updateable
 
 
 class RegularItem(Item, Updateable):
+    
     def __init__(self, name, sellIn, quality):
         Item.__init__(self, name, sellIn, quality)
     
