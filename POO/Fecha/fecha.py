@@ -10,6 +10,8 @@ class Fecha:
 
     def incrementarFecha(fecha, incremento):
         
+        assert isinstance(incremento, int)
+        hoy = fecha
         diasRestantes = fecha.dia + incremento
         
         while diasRestantes >= 30:
@@ -33,6 +35,7 @@ class Fecha:
     def setFecha(self, incremento):
 
         self.incrementarFecha(incremento)
+        assert self.dia <= 30 and self.mes <= 12, ''
 
 
     
@@ -42,6 +45,9 @@ class Fecha:
 
         key = str(self.mes)
         mes = meses[key]
+
+        assert isinstance(mes, str)
+
         return mes
         
 
