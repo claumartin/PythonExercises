@@ -19,7 +19,7 @@ class Fecha:
                 diasRestantes = diasRestantes % 360
             
             elif diasRestantes >= 30:
-                
+
                 incrementoMeses = diasRestantes/30
                 fecha.mes += int(incrementoMeses)
                 diasRestantes = diasRestantes % 30
@@ -28,6 +28,7 @@ class Fecha:
     
 
     def setFecha(self, incremento):
+
         self.incrementarFecha(incremento)
 
 
@@ -46,7 +47,6 @@ class Fecha:
 if __name__ == '__main__':
 
     hoy = Fecha(10, 1, 2019)
-
     assert hoy.getFecha() == '10-1-2019'
 
     hoy.setFecha(1)
