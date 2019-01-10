@@ -1,9 +1,11 @@
 class Fecha:
+
     def __init__(self, dia, mes, año):
         
         self.dia = dia
         self.mes = mes
         self.año = año
+
 
 
     def incrementarFecha(fecha, incremento):
@@ -27,14 +29,26 @@ class Fecha:
         fecha.dia = int(diasRestantes)
     
 
+
     def setFecha(self, incremento):
 
         self.incrementarFecha(incremento)
 
 
-    def getFecha(self):
+    
+    def devuelveNombreMes(self):
+        meses = {'1': 'ENERO', '2': 'FEBRERO', '3': 'MARZO', '4': 'ABRIL', '5': 'MAYO', '6': 'JUNIO', '7': 'JULIO', 
+       '8': 'AGOSTO', '9': 'SEPTIEMBRE', '10': 'OCTUBRE','11': 'NOVIEMBRE', '12': 'DICIEMBRE'}
 
-        return '%s' % (self.dia) + '-' + '%s' % (self.mes) + '-' + '%s' % (self.año)
+        key = str(self.mes)
+        mes = meses[key]
+        return mes
+        
+
+
+    def getFecha(self):
+        return '%s' % (self.dia) + '-' + self.imprimirMes() + '-' + '%s' % (self.año)
+
 
 
     def __repr__(self):
@@ -44,23 +58,25 @@ class Fecha:
 
 
 
+
+
 if __name__ == '__main__':
 
     hoy = Fecha(10, 1, 2019)
-    assert hoy.getFecha() == '10-1-2019'
+    assert hoy.getFecha() == '10-ENERO-2019'
 
     hoy.setFecha(1)
     mañana = hoy.getFecha()
-    assert mañana == '11-1-2019'
+    assert mañana == '11-ENERO-2019'
 
     hoy.setFecha(30)
     enUnMes = hoy.getFecha()
-    assert enUnMes == '11-2-2019'
+    assert enUnMes == '11-FEBRERO-2019'
 
     hoy.setFecha(360)
     enUnAño = hoy.getFecha()
-    assert enUnAño == '11-2-2020'
+    assert enUnAño == '11-FEBRERO-2020'
 
     hoy.setFecha(530)
     diaRandom = hoy.getFecha()
-    assert diaRandom == '1-8-2021'
+    assert diaRandom == '1-AGOSTO-2021'
