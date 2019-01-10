@@ -17,8 +17,6 @@ Construye una clase de nombre Fecha que represente el tipo de dato abstracto ADT
 
 * Método de nombre **setFecha()** que recibe como argumentos tres enteros y se los asigna a las propiedades de la clase (utiliza el mismo nombre en las variables que reciben los argumentos y en las propiedades de la clase). Este método ha de diseñarse mediante programación por contrato, es decir, debe incluir una precondición: si los valores recibidos no satisfacen las restricciones de los valores impuestos a dia, mes y año, el valor que se establece es 01 o 1900 [Manejo de errores: devolver un valor neutro, aunque en este caso no lo sea]. Ya que va a ser utilizado en el constructor, este precondición podría implementarse en su propia rutina para ser llamada desde este método y desde el “constructor”.
 
-* Métodos **set()** y **get()** para todas las propiedades [Abstracción y encapsulamiento].
-
 * **incrementarFecha()**: recibe un entero que representa un número de días e incrementa la fecha en dicha cantidad de dias.
 
 * **imprimirFecha()**: escribe la fecha en el formato dia-mes-año en consola. Se mostrará el nombre del mes, no el número.
@@ -51,5 +49,3 @@ Construye una clase de nombre Hora que permita almacenar la hora, así como los 
 * **getHora()**: devuelve la hora como una lista de la forma [horas, minutos, segundos] o como un string de la forma "horas:minutos:segundos".
 
 * **imprmirHora()** que muestra en consola la hora en formato string de la forma "horas:minutos:segundos".
-
-* Métodos **set()** y **get()** para todas las propiedades [Abstracción y encapsulamiento].
