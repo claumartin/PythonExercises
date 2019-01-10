@@ -20,7 +20,7 @@ class Fecha:
                 fecha.año += int(incrementoAños)
                 diasRestantes = diasRestantes % 360
             
-            elif diasRestantes >= 30:
+            else:
 
                 incrementoMeses = diasRestantes/30
                 fecha.mes += int(incrementoMeses)
@@ -47,7 +47,7 @@ class Fecha:
 
 
     def getFecha(self):
-        return '%s' % (self.dia) + '-' + self.imprimirMes() + '-' + '%s' % (self.año)
+        return '%s' % (self.dia) + '-' + self.devuelveNombreMes() + '-' + '%s' % (self.año)
 
 
 
