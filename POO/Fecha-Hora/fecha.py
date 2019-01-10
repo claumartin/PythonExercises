@@ -6,27 +6,25 @@ class Fecha:
         self.año = año
 
 
-
     def incrementarFecha(fecha, incremento):
         
         diasRestantes = fecha.dia + incremento
         
         while diasRestantes >= 30:
+
             if diasRestantes >= 360:
+
                 incrementoAños = diasRestantes/360
                 fecha.año += int(incrementoAños)
                 diasRestantes = diasRestantes % 360
             
             elif diasRestantes >= 30:
+                
                 incrementoMeses = diasRestantes/30
                 fecha.mes += int(incrementoMeses)
                 diasRestantes = diasRestantes % 30
         
         fecha.dia = int(diasRestantes)
-
-        
-
-
     
 
     def setFecha(self, incremento):
