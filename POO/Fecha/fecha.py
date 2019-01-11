@@ -11,36 +11,28 @@ class Fecha:
         
         assert isinstance(incremento, int) and incremento > 0
 
-        #Para operar interpretaremos los meses del 0 al 11 
-        # y los días del 0 al 30
-
-        fecha.mes -= 1
-        fecha.dia -= 1
-
         diasTotales = fecha.dia + incremento
 
         while diasTotales > 31:
 
-            mesesIncremento = diasTotales / 30
+            mesesTotales = int(diasTotales / 30) + fecha.mes
 
-            if mesesIncremento > 11:
+            while mesesTotales > 12:
 
-                añosIncremento = mesesIncremento / 11
-                fecha.año += int(añosIncremento) 
-                
-                diasTotales = diasTotales % 30
+                añosIncremento = int(mesesTotales / 12)
+                fecha.año += añosIncremento
+                mesesTotales = int(mesesTotales % 12)
 
-            else:
             
-                fecha.mes += int(mesesIncremento)
-
-                diasTotales = diasTotales % 30
-
-        fecha.dia = int(diasTotales) + 1
-        fecha.mes += 1
+            fecha.mes = mesesTotales
+            diasTotales = int(diasTotales % 31)
         
+        fecha.dia = diasTotales
+                
+            
 
-
+               
+			
     def setFecha(self, incremento):
 
         assert 1 <= self.dia <= 31 and 1 <= self.mes <= 12 and 1900 <= self.año <= 3000
@@ -89,11 +81,11 @@ if __name__ == '__main__':
     mañana = hoy.getFecha()
     assert mañana == '11-ENERO-2019'
 
-    hoy.setFecha(30)
+    hoy.setFecha(31)
     enUnMes = hoy.getFecha()
     assert enUnMes == '11-FEBRERO-2019'
 
-    hoy.setFecha(360)
+    hoy.setFecha(372)
     enUnAño = hoy.getFecha()
     assert enUnAño == '11-FEBRERO-2020'
 
@@ -101,6 +93,8 @@ if __name__ == '__main__':
     ultimoDiaMes = hoy.getFecha()
     assert ultimoDiaMes == '31-FEBRERO-2020'
 
-    hoy.setFecha(279)
+    hoy.setFecha(289)
     ultimoMes = hoy.getFecha()
     assert ultimoMes == '10-DICIEMBRE-2020'
+
+    
