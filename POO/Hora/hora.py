@@ -8,9 +8,13 @@ class Hora:
     
 
 
-    def setHora(self):
+    def setHora(self, nuevaHora):
 
-        assert 0 <= self.hora <= 23 and 0 <= self.minuto <= 59 and 0 <= self.segundo <= 59
+        self.hora = nuevaHora[0]
+        self.minuto = nuevaHora[1]
+        self.segundo = nuevaHora[2]
+
+        assert 0 <= self.hora <= 23 and 0 <= self.minuto <= 59 and 0 <= self.segundo <= 59, 'Hour elements out of range'
         
         
 
@@ -49,3 +53,11 @@ if __name__ == "__main__":
     assert miHora.devuelveStringHora() == '11:30:0'
     
     assert miHora.getHora() == [11, 30, 00]
+
+    nuevaHora = (12, 37, 47)
+    miHora.setHora(nuevaHora)
+    assert miHora.getHora() == [12, 37, 47]
+
+    otraHora = [12, 45, 00]
+    miHora.setHora(otraHora)
+    assert miHora.getHora() == [12, 45, 00]    
