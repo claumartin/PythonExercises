@@ -10,6 +10,8 @@ class Hora:
 
     def setHora(self, nuevaHora):
 
+        assert isinstance(nuevaHora, (list, tuple))
+
         self.hora = nuevaHora[0]
         self.minuto = nuevaHora[1]
         self.segundo = nuevaHora[2]
@@ -43,6 +45,8 @@ class Hora:
     def __str__(self):
 
         return self.devuelveStringHora()
+
+
 
 
 
