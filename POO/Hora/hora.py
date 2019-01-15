@@ -8,6 +8,12 @@ class Hora:
     
 
 
+    def setHora(self):
+
+        assert 0 <= self.hora <= 23 and 0 <= self.minuto <= 59 and 0 <= self.segundo <= 59
+        
+        
+
     def getHora(self):
 
         listHora = []
@@ -24,9 +30,15 @@ class Hora:
 
 
 
-    def __str__(self):
+    def devuelveStringHora(self):
 
         return '%s' % (self.hora) + ':' + '%s' % (self.minuto) + ':' + '%s' % (self.segundo)
+
+
+
+    def __str__(self):
+
+        return self.devuelveStringHora()
 
 
 
@@ -34,6 +46,6 @@ class Hora:
 if __name__ == "__main__":
     
     miHora = Hora(11, 30, 00)
-    print(miHora) # It is '11:30:0'
+    assert miHora.devuelveStringHora() == '11:30:0'
     
     assert miHora.getHora() == [11, 30, 00]
